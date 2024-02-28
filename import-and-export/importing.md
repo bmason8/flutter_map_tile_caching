@@ -9,7 +9,7 @@ An exported store must be re-imported before it can be used again.
 {% hint style="warning" %}
 Attempting to import a damaged/corrupted store may result in a fatal app crash, or major errors at least.
 
-See [#initialisation-safety](../usage/initialisation.md#initialisation-safety "mention") for more information about how this may be handled in future.
+See [#initialisation-safety](../usage/initialisation-and-backends.md#initialisation-safety "mention") for more information about how this may be handled in future.
 {% endhint %}
 
 ## With Platform GUI (`withGUI`)

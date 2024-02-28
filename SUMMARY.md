@@ -12,9 +12,9 @@
 
 ## Usage
 
-* [Initialisation](usage/initialisation.md)
+* [Initialisation & Backends](usage/initialisation-and-backends.md)
 * [Using Roots & Stores](usage/roots-and-stores/README.md)
-  * [Management](usage/roots-and-stores/management.md)
+  * [Store Management](usage/roots-and-stores/store-management.md)
   * [Statistics](usage/roots-and-stores/statistics.md)
   * [Metadata](usage/roots-and-stores/metadata.md)
   * [Recovery](usage/roots-and-stores/recovery.md)
@@ -25,10 +25,10 @@
 ## Bulk Downloading
 
 * [Introduction](bulk-downloading/introduction.md)
-* [1⃣ Create A Region](bulk-downloading/regions.md)
-* [2⃣ Prepare For Downloading](bulk-downloading/prepare.md)
-* [3⃣ Start In Foreground](bulk-downloading/foreground.md)
-* [3⃣ Start In Background](bulk-downloading/background/README.md)
+* [1️⃣ Create A Region](bulk-downloading/regions.md)
+* [2️⃣ Prepare For Downloading](bulk-downloading/prepare.md)
+* [3️⃣ Start In Foreground](bulk-downloading/foreground.md)
+* [3️⃣ Start In Background](bulk-downloading/background/README.md)
   * [Limitations](bulk-downloading/background/limitations.md)
 * [Control Downloads](bulk-downloading/control-downloads.md)
 

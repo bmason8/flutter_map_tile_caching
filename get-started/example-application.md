@@ -9,27 +9,21 @@ To start using FMTC in your own app, please check out the [quickstart.md](quicks
 {% endhint %}
 
 {% hint style="success" %}
-The example application pairs perfectly with the testing tile server included in the FMTC project: [#testing-your-application](../bulk-downloading/introduction.md#testing-your-application "mention")!
+The example application pairs perfectly with the testing tile server included in the FMTC project: [testing-tile-server.md](../usage/bulk-downloading/testing-tile-server.md "mention")!
 {% endhint %}
 
-## Android
+## Prebuilt Artifacts
 
-Download a copy of the latest 'android-demo' artifact from GitHub Actions, and install the APK inside.
+If you can't build from source for your platform, our GitHub Actions CI system compiles the example app to artifacts for Windows and Android, which just require unzipping and installing the .exe or .apk found inside.
 
 {% hint style="info" %}
-The operating system may request permissions to install applications from unknown sources: you must allow this.
+Note that these artifacts are built automatically from the ['master' branch](https://github.com/fleaflet/flutter\_map), so may not reflect the the latest release on pub.dev.
 {% endhint %}
 
-## Windows
+{% embed url="https://nightly.link/JaffaKetchup/flutter_map_tile_caching/workflows/main/main" %}
+Latest Build Artifacts (thanks [nightly](https://nightly.link/))
+{% endembed %}
 
-Download a copy of the latest 'windows-demo' artifact from GitHub Actions, and run the executable inside to install the application. Optionally grant administrator permissions to install for all users.
+## Build From Source
 
-{% hint style="info" %}
-You may receive security warnings depending on your system setup: these are false positives and occur due to the package being unsigned.
-{% endhint %}
-
-## Other Platforms
-
-For other platforms, there are no prebuilt applications.
-
-Clone the [FMTC GitHub repository](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/) to your device, then run/build the Flutter project directory found under '/example/'.
+If you need to use the example app on another platform, you can build from source, using the 'example' directory of the repository.

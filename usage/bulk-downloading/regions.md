@@ -2,7 +2,7 @@
 
 Regions (`BaseRegion`s) are geographical areas that do not yet have any of the necessary extra information to start a download (like `DownloadableRegion`s).
 
-The [example-application.md](../get-started/example-application.md "mention") contains a great way you might want to allow your users to choose a region to download, and it shows how to use Provider to share a created region and the number of approximate tiles it has to a download screen. It even allows the user to follow the download, tile-by-tile!
+The [example-application.md](../../get-started/example-application.md "mention") contains a great way you might want to allow your users to choose a region to download, and it shows how to use Provider to share a created region and the number of approximate tiles it has to a download screen. It even allows the user to follow the download, tile-by-tile!
 
 ## Types Of Region
 

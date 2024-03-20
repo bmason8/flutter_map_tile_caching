@@ -7,35 +7,28 @@
 
 * [Quickstart](get-started/quickstart.md)
 * [Installation](get-started/installation.md)
-* [Additional Setup](get-started/additional-setup.md)
 * [Example Application](get-started/example-application.md)
 
 ## Usage
 
-* [Initialisation & Backends](usage/initialisation-and-backends.md)
-* [Using Roots & Stores](usage/roots-and-stores/README.md)
+* [1️⃣ Initialisation](usage/initialisation.md)
+* [📂 Using Roots & Stores](usage/roots-and-stores/README.md)
   * [Store Management](usage/roots-and-stores/store-management.md)
   * [Statistics](usage/roots-and-stores/statistics.md)
   * [Metadata](usage/roots-and-stores/metadata.md)
   * [Recovery](usage/roots-and-stores/recovery.md)
-* [flutter\_map Integration](usage/integration.md)
+* [🗺️ flutter\_map Integration](usage/integration.md)
+* [📲 Bulk Downloading](usage/bulk-downloading/README.md)
+  * [1️⃣ Create A Region](usage/bulk-downloading/regions.md)
+  * [2️⃣ Prepare For Downloading](usage/bulk-downloading/prepare.md)
+  * [3️⃣ Start Download](usage/bulk-downloading/foreground.md)
+  * [Control Downloads](usage/bulk-downloading/control-downloads.md)
+  * [Testing Tile Server](usage/bulk-downloading/testing-tile-server.md)
+* [📤 External](usage/external/README.md)
+  * [Exporting](usage/external/exporting.md)
+  * [Importing](usage/external/importing.md)
+* [Backends](usage/backends.md)
 * [Full API Reference](https://pub.dev/documentation/flutter\_map\_tile\_caching/latest/flutter\_map\_tile\_caching/flutter\_map\_tile\_caching-library.html)
-
-## Bulk Downloading
-
-* [Introduction](bulk-downloading/introduction.md)
-* [1️⃣ Create A Region](bulk-downloading/regions.md)
-* [2️⃣ Prepare For Downloading](bulk-downloading/prepare.md)
-* [3️⃣ Start In Foreground](bulk-downloading/foreground.md)
-* [3️⃣ Start In Background](bulk-downloading/background/README.md)
-  * [Limitations](bulk-downloading/background/limitations.md)
-* [Control Downloads](bulk-downloading/control-downloads.md)
-
-## Import & Export
-
-* [Introduction](import-and-export/introduction.md)
-* [Importing](import-and-export/importing.md)
-* [Exporting](import-and-export/exporting.md)
 
 ## Migration
 

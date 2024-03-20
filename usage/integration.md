@@ -2,7 +2,7 @@
 description: How to integrate FMTC with Flutter Map
 ---
 
-# flutter\_map Integration
+# 🗺️ flutter\_map Integration
 
 Stores also have the method `getTileProvider()`. This is the point of integration with flutter\_map, providing browse caching through a custom image provider, and can be used as so:
 

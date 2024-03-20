@@ -1,4 +1,4 @@
-# 3⃣ Start In Foreground
+# 3️⃣ Start Download
 
 Now that you have constructed a `DownloadableRegion`, you're almost ready to go.
 
@@ -28,16 +28,9 @@ Before using FMTC, especially to bulk download, ensure you comply with the appro
 
 This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-***
+For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles).
 
-Some common tile servers' ToS are listed below:
-
-* [OpenStreetMap](https://operations.osmfoundation.org/policies/tiles)
-* [Mapbox](https://www.mapbox.com/legal/tos)
-* [Thunderforest](https://www.thunderforest.com/terms/)
-* [Stadia Maps](https://stadiamaps.com/terms-of-service/)
-
-For testing purposes, check out the testing tile server included in the FMTC project: [#testing-your-application](introduction.md#testing-your-application "mention").
+For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](testing-tile-server.md "mention").
 {% endhint %}
 
 ```dart
@@ -74,26 +67,32 @@ For example, you may wish to keep a list of all the failed tiles' URLs.
 
 However, there are 3 important things to keep in mind when doing this:
 
-{% hint style="warning" %}
-**Memory**
+<details>
+
+<summary>Memory Consumption</summary>
 
 Avoid keeping a list of _all_ emitted events. Instead, keep a 'circular buffer' of the useful subset of events.
 
 A single download can have many events, and storing them all will consume a lot of memory. It is easy to consume all of the remaining allocated memory, and crash the app.
-{% endhint %}
 
-{% hint style="warning" %}
-**Data Loss**
+</details>
+
+<details>
+
+<summary>Data Loss</summary>
 
 Avoid keeping track of required information internally through a `StreamBuilder` intended to display a UI.
 
 A `StreamBuilder` will not necessarily call the `builder` callback once per event, especially if the download has a high TPS. Therefore, events may be lost.
-{% endhint %}
 
-{% hint style="warning" %}
-**Data Duplication**
+</details>
+
+<details>
+
+<summary>Data Duplication</summary>
 
 Avoid keeping track of events where the `latestTileEvent.isRepeat` property is `true`.
 
 These `TileEvents` are exact repeats of the previous event, usually due to the `maxReportInterval` functionality. Therefore, including both in a dataset would be erroneous.
-{% endhint %}
+
+</details>

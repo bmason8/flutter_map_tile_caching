@@ -3,10 +3,10 @@
 {% hint style="warning" %}
 **FMTC is licensed under GPL-v3.**
 
-If you're developing a proprietary (non open-source) application, this affects you and your application's legal right to distribution. For more information, please see [#proprietary-licensing](../#proprietary-licensing "mention").
+If you're developing an application that isn't licensed under GPL, this affects you and your application's legal right to distribution. For more information, please see [#proprietary-licensing](../#proprietary-licensing "mention").
 {% endhint %}
 
-This page guides you through a simple, fast setup of FMTC that just enables basic browse caching, without any of the bells and whistles that you can discover throughout the rest of this documentation.
+This page guides you through a simple, fast setup of FMTC that just enables basic browse caching, without any of the cool features that you can discover throughout the rest of this documentation.
 
 ## 1. [Install](installation.md)
 
@@ -22,7 +22,7 @@ flutter pub add flutter_map_tile_caching
 import 'package:flutter_map_tile_caching/flutter_map_tile_caching.dart';
 ```
 
-## 2. [Initialise](../usage/initialisation-and-backends.md)
+## 2. [Initialise](../usage/initialisation.md)
 
 Perform the startup procedure to allow usage of FMTC's APIs and allow FMTC to spin-up the underlying connections & systems.
 
@@ -32,7 +32,8 @@ Here, we'll use the built-in, default 'backend' storage, which uses [ObjectBox](
 import 'package:flutter_map_tile_caching/flutter_map_tile_caching.dart';
 
 Future&#x3C;void> main() async {
-    WidgetsFlutterBinding.ensureInitialized();   
+    WidgetsFlutterBinding.ensureInitialized();
+    
 <strong>    await FMTCObjectBoxBackend().initialise(...);
 </strong>    
     // ...
@@ -47,16 +48,11 @@ Create a container that is capable of storing tiles, and can be used to [browse 
 
 Here, we'll create one called 'mapStore', directly after initialisation. Any number of stores can be created, at any point!
 
-<pre class="language-dart" data-title="main.dart"><code class="lang-dart">Future&#x3C;void> main() async {
-    WidgetsFlutterBinding.ensureInitialized();   
-    await FlutterMapTileCaching.initialise();
+<pre class="language-dart" data-title="main.dart"><code class="lang-dart">    // ...
     
 <strong>    await FMTCStore('mapStore').manage.create();
 </strong>    
     // ...
-    
-    runApp(MyApp());
-}
 </code></pre>
 
 ## 4. [Connect to 'flutter\_map'](../usage/integration.md)
@@ -67,7 +63,8 @@ Add FMTC's specialised `TileProvider` to the `TileLayer`, to enable browse cachi
 Double check that the name of the store specified here is the same as the store created above!
 {% endhint %}
 
-<pre class="language-dart"><code class="lang-dart">import 'package:flutter_map/flutter_map.dart';
+<pre class="language-dart" data-title="map_view.dart"><code class="lang-dart">import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_tile_caching/flutter_map_tile_caching.dart';
 
 TileLayer(
     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -90,16 +87,9 @@ Before using FMTC, especially to bulk download, ensure you comply with the appro
 
 This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-***
+For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles).
 
-Some common tile servers' ToS are listed below:
-
-* [OpenStreetMap](https://operations.osmfoundation.org/policies/tiles)
-* [Mapbox](https://www.mapbox.com/legal/tos)
-* [Thunderforest](https://www.thunderforest.com/terms/)
-* [Stadia Maps](https://stadiamaps.com/terms-of-service/)
-
-For testing purposes, check out the testing tile server included in the FMTC project: [#testing-your-application](../bulk-downloading/introduction.md#testing-your-application "mention").
+For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](../usage/bulk-downloading/testing-tile-server.md "mention").
 {% endhint %}
 
 [^1]: This caching occurs automatically as the map is moved by the user, and new tiles load.

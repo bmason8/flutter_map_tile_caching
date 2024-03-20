@@ -1,14 +1,20 @@
-# Using Roots & Stores
+# 📂 Using Roots & Stores
 
-## How It Works
+## Structure
 
-FMTC uses Roots and Stores to structure it's data.
+FMTC uses _roots_ and _stores_ to structure its data.
 
-There is generally a single Root, which contains multiple Stores. Cached tiles can belong to multiple Stores (the relationship between Stores and tiles is many-to-many).
+There is generally a single root (which generally corresponds to a single [backend](../initialisation.md#backends)), which contains multiple stores. Cached tiles can belong to multiple stores (the relationship between stores and tiles is many-to-many), which keeps duplication minimized.
 
-Stores also contain any metadata.
+Stores also contain any metadata. Both roots and stores also contain cached statistics to boost performance.
 
 Each structure provides access to categorized methods, listed below.
+
+{% hint style="warning" %}
+The structures use the ambient backend when a method is invoked on it, not at construction time.
+
+Therefore, it is possible to construct an `FMTCStore`/`FMTCRoot` (see below) before initialisation, but 'using' it will throw `RootUnavailable`.
+{% endhint %}
 
 ## Accessing Stores
 
@@ -20,15 +26,9 @@ Ensure names of stores are consistent across every access. "Typed"/code-generate
 
 Construction of an `FMTCStore` object does not imply/infer that the underlying store has been created and is ready for use. Therefore, a store will require creation via its `StoreManagement` object (accessed via `FMTCStore.manage`) before it can be used.
 
-<pre class="language-dart"><code class="lang-dart"><strong>final store = FMTCStore('storeName');
+<pre class="language-dart"><code class="lang-dart"><strong>// final store = FMTCStore('storeName');
 </strong>await FMTCStore('storeName').manage.create(); // Refers to the same store as above
 </code></pre>
-
-{% hint style="warning" %}
-`FMTCStore` uses the ambient backend when a method is invoked with it, not at construction time.
-
-Therefore, it is possible to construct an `FMTCStore` before initialisation, but 'using' it will throw `RootUnavailable`.
-{% endhint %}
 
 After a store reference is constructed, the following actions can be performed with it:
 
@@ -38,7 +38,7 @@ After a store reference is constructed, the following actions can be performed w
 
 Similarly to stores, the root is accessed via `FMTCRoot` - but is not named.
 
-<pre class="language-dart"><code class="lang-dart"><strong>final root = FMTCRoot;
+<pre class="language-dart"><code class="lang-dart"><strong>// final root = FMTCRoot;
 </strong>final size = await FMTCRoot.stats.realSize;
 </code></pre>
 

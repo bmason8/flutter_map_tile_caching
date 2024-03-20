@@ -1,4 +1,4 @@
-# 1⃣ Create A Region
+# 1️⃣ Create A Region
 
 Regions (`BaseRegion`s) are geographical areas that do not yet have any of the necessary extra information to start a download (like `DownloadableRegion`s).
 
@@ -47,9 +47,7 @@ final region = CircleRegion(
 ```
 {% endtab %}
 
-{% tab title="Polyline + Radius" %}
-_aka. `Line`_
-
+{% tab title="(Poly)Line" %}
 A more advanced type of region, defined by a list of coordinates and radius (in meters).
 
 This could be used to download tiles along a planned travel route, for example hiking or long-distance driving. Import coordinates from a routing engine, or from a GPX/KML file for maximum integration!
@@ -66,9 +64,7 @@ This type of region may consume more memory/RAM when generating tiles than other
 {% endhint %}
 {% endtab %}
 
-{% tab title="Polygon" %}
-_aka. `CustomPolygon`_
-
+{% tab title="Custom Polygon" %}
 The most advanced type of region, defined by a list of coordinates defining the outline of a polygon.
 
 ```dart

@@ -19,7 +19,7 @@ TileLayer(
 
 ## Tile Provider Settings
 
-This method (and others) optionally take a `FMTCTileProviderSettings`. These configure the behaviour of the tile provider. Defaults to the settings specified in the [global-settings.md](global-settings.md "mention"), or the package default (see table below) if that is not specified.
+This method (and others) optionally take a `FMTCTileProviderSettings`. These configure the behaviour of the tile provider. Defaults to the settings specified in the [Broken link](broken-reference "mention"), or the package default (see table below) if that is not specified.
 
 `FMTCTileProviderSettings` can take the following arguments:
 

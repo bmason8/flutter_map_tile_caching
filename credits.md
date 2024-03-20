@@ -20,12 +20,4 @@ Many thanks to all my sponsors, not matter how much or how little they donated (
 * [@eidolonFIRE](https://github.com/eidolonFIRE)
 * [@weishuhn](https://github.com/weishuhn)
 * [@mohammedX6](https://github.com/mohammedX6)
-* _+ 3 anonymous or private donors_
-
-## Privacy & Cookie Policy
-
-3rd party cookies are in use by default, for the purpose of internally tracking visits to this site. We use Google Analytics and GitBook's own built-in analytics to perform this. Data collected is kept confidential to the author of this site, and is only used for improvement/insight purposes.
-
-The Google Analytics property in use is not connected to any Ad tracking/provider any more than by default. No ads are shown on this site.
-
-Please get in touch if you have more questions!
+* _+ more anonymous or private donors_

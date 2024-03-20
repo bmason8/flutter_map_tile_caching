@@ -24,4 +24,4 @@ If your user needs to stop the download entirely, use `cancel`.
 
 `cancel` allows all threads to finish the tile they're currently downloading, then forces them to cleanup and 'kill' themselves. Any buffered tiles are written to the store before the future returned by `cancel` is completed.
 
-It is safe to use `cancel` after `pause` without `resuming` first.
+It is safe to use `cancel` after `pause` without `resume`ing first.

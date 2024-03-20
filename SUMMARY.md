@@ -19,7 +19,6 @@
   * [Metadata](usage/roots-and-stores/metadata.md)
   * [Recovery](usage/roots-and-stores/recovery.md)
 * [flutter\_map Integration](usage/integration.md)
-* [Global Settings](usage/global-settings.md)
 * [Full API Reference](https://pub.dev/documentation/flutter\_map\_tile\_caching/latest/flutter\_map\_tile\_caching/flutter\_map\_tile\_caching-library.html)
 
 ## Bulk Downloading

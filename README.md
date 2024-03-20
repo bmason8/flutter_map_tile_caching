@@ -12,8 +12,7 @@ You're currently browsing the docs for v9, which is currently in beta prerelease
 Browse the current v8 docs: [v8](https://app.gitbook.com/o/1aKKbSpe255wyVNDoFYc/s/fPX4iWzEnN3gw4KJGc0k/ "mention").
 {% endhint %}
 
-[![Pub](https://camo.githubusercontent.com/fa5d2e07c3ec99015333a47431c8f9c36fdd2e1b2d13e0931957165bfdbc24bd/68747470733a2f2f696d672e736869656c64732e696f2f7075622f762f666c75747465725f6d61705f74696c655f63616368696e672e7376673f6c6162656c3d4c61746573742b537461626c652b56657273696f6e)](https://pub.dev/packages/flutter\_map\_tile\_caching) [![likes](https://camo.githubusercontent.com/069b79d31629eac956d0bc39433b7417b922797243949aad8029618c357f5f61/68747470733a2f2f696d672e736869656c64732e696f2f7075622f6c696b65732f666c75747465725f6d61705f74696c655f63616368696e673f6c6162656c3d7075622e6465762b4c696b6573)](https://pub.dev/packages/flutter\_map\_tile\_caching/score) [![pub points](https://camo.githubusercontent.com/5f65f19f02c681109ee3cc29f56f32393a7a8a543d48f1c0470171eed8b76e40/68747470733a2f2f696d672e736869656c64732e696f2f7075622f706f696e74732f666c75747465725f6d61705f74696c655f63616368696e673f6c6162656c3d7075622e6465762b506f696e7473)](https://pub.dev/packages/flutter\_map\_tile\_caching/score)\
-[![GitHub stars](https://camo.githubusercontent.com/066e78e1a3534dd759cfa7585cbda5c406c4b3c93dac6aa31da5ddd2d0809a3e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f4a616666614b6574636875702f666c75747465725f6d61705f74696c655f63616368696e672e7376673f6c6162656c3d4769744875622b5374617273)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/stargazers/) [![GitHub issues](https://camo.githubusercontent.com/d64e0e0d2a1d2921b4b697e7d23488c38e47132f2957436141c2bcbf742cd40f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f4a616666614b6574636875702f666c75747465725f6d61705f74696c655f63616368696e672e7376673f6c6162656c3d497373756573)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/issues/) [![GitHub PRs](https://camo.githubusercontent.com/091d49c5807d3fa7cb445f4f90c2fd58a369375aa8a13d76cfe7885dce5f0daa/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d70722f4a616666614b6574636875702f666c75747465725f6d61705f74696c655f63616368696e672e7376673f6c6162656c3d50756c6c2532305265717565737473)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/pulls/)
+[![pub.dev](https://img.shields.io/pub/v/flutter\_map\_tile\_caching.svg?label=Latest+Version)](https://pub.dev/packages/flutter\_map\_tile\_caching) [![stars](https://badgen.net/github/stars/JaffaKetchup/flutter\_map\_tile\_caching?label=stars\&color=green\&icon=github)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/stargazers) [![likes](https://img.shields.io/pub/likes/flutter\_map\_tile\_caching?logo=flutter)](https://pub.dev/packages/flutter\_map\_tile\_caching/score)        [![Open Issues](https://badgen.net/github/open-issues/JaffaKetchup/flutter\_map\_tile\_caching?label=Open+Issues\&color=green)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/issues) [![Open PRs](https://badgen.net/github/open-prs/JaffaKetchup/flutter\_map\_tile\_caching?label=Open+PRs\&color=green)](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/pulls)
 
 ## Highlights
 
@@ -27,7 +26,6 @@ Too easy :smile:! Take a look at Google Maps, or Strava, or whichever other app 
 
 <summary>All I see are rectangles. Why download whole regions of map that will never be even glanced at? Because most routes or areas aren't square and rectangles!</summary>
 
-FMTC takes your app a step above the competition by having a huge choice of region shapes to download.\
 Whether it's walking along a remote winding river using the [Line region](bulk-downloading/regions.md#poly-line), downloading all of central London ready for that weekend exploration using the [Circle region](bulk-downloading/regions.md#circle) (roaming fees + maps gets expensive fast!), or tracking your belongings across a vast, shapeless space using the [Custom Polygon region](bulk-downloading/regions.md#custom-polygon), FMTC has your user's back - but not all of their storage space!
 
 </details>
@@ -37,6 +35,28 @@ Whether it's walking along a remote winding river using the [Line region](bulk-d
 <summary>Those massive lakes and coastlines near me really interrupt the view. If only there was a way to remove them from the picture...</summary>
 
 Oh wait, there is! With Sea Tile Skipping, you can avoid storing those unneccessary tiles of sea of out-of-tile-server-bounds-void, then use the client's functonality to just paint the spaces the same color as the sea. This also preserves sea tiles that aren't so empty after all - that boat path could come in handy for some scuba diving. Just another way FMTC keeps your user's phone a [tight ship](#user-content-fn-8)[^8] ;)
+
+</details>
+
+<details>
+
+<summary>I need to download something else for a moment. Do I really have to stop the entire download and start again?</summary>
+
+Not with FMTC! Downloads can be paused and resumed at any time, and with Download Recovery, downloads that stopped unexpectedly can be restarted without your user having to select the entire region again.
+
+</details>
+
+<details>
+
+<summary>I wonder how much it costs the app developers?</summary>
+
+FMTC supports bulk downloading from any tile server\*[^9], so you can choose whichever one suits you best.
+
+Our browse caching mechanism doesn't result in any extra requests to the tile server, and in fact can reduce costs by serving tiles to users from their local cache without cost. Or, if you're running your own server, you can reduce the strain on it, keeping it snappy with fewer resources!
+
+Downloads can be rate limited to avoid running up to the server's rate limit or excess fee.
+
+And with export/import functionality, user's can download regions just once, then keep the download themselves for another time. Or, you can provide a bundle of tiles to all your user's, while still allow it to be updated per-user in future!\*[^10]
 
 </details>
 
@@ -69,7 +89,7 @@ Essentially, whilst you can use this code within commercial projects, they must 
 I learnt (and am still learning) to code with free, open-source software due to my age and lack of money, and for that reason, I believe in promoting open-source wherever possible to give equal opportunities to everybody, no matter their age, financial position, or any other characteristic. I'm not sure it's fair for commercial & proprietary applications to use software made by people for free out of generosity without giving back to the ecosystem or maintainer(s).\
 On the other hand, I recognise that commercial businesses may want to use my projects for their own proprietary applications, and are happy to support me, and I am also trying to make a small amount of money from my projects, by donations and by selling licenses!
 
-Therefore, if you would like a license to use this software within a proprietary application, I am willing to sell a (preferably yearly) license. If this seems like what you'd be interested in, please do not hesitate to get in touch at [fmtc@jaffaketchup.dev](mailto:fmtc@jaffaketchup.dev). Please include details of your project if you can, and the approximate scale/audience for your app; I try to find something that works for everyone, and I'm happy to negotiate! If you're a non-profit organization, I'm happy to also offer an alternative license for free\*[^9]!
+Therefore, if you would like a license to use this software within a proprietary application, I am willing to sell a (preferably yearly) license. If this seems like what you'd be interested in, please do not hesitate to get in touch at [fmtc@jaffaketchup.dev](mailto:fmtc@jaffaketchup.dev). Please include details of your project if you can, and the approximate scale/audience for your app; I try to find something that works for everyone, and I'm happy to negotiate! If you're a non-profit organization, I'm happy to also offer an alternative license for free\*[^11]!
 
 ## Get Help
 
@@ -101,4 +121,8 @@ Please get in touch via the correct method below for your issue, and I'll be the
 
 [^8]: without unneccesary bloat
 
-[^9]: Decision will be case dependent. Please get in touch, and I'll be happy to talk!
+[^9]: Those compatible with flutter\_map. Some tile server's may forbid bulk downloading.
+
+[^10]: Some tile servers may forbid this activity. Check your tile server's ToS.
+
+[^11]: Decision will be case dependent. Please get in touch, and I'll be happy to talk!

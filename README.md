@@ -26,7 +26,7 @@ Too easy :smile:! Take a look at Google Maps, or Strava, or whichever other app 
 
 <summary>All I see are rectangles. Why download whole regions of map that will never be even glanced at? Because most routes or areas aren't square and rectangles!</summary>
 
-Whether it's walking along a remote winding river using the [Line region](usage/bulk-downloading/regions.md#poly-line), downloading all of central London ready for that weekend exploration using the [Circle region](usage/bulk-downloading/regions.md#circle) (roaming fees + maps gets expensive fast!), or tracking your belongings across a vast, shapeless space using the [Custom Polygon region](usage/bulk-downloading/regions.md#custom-polygon), FMTC has your user's back - but not all of their storage space!
+Whether it's walking along a remote winding river using the [Line region](bulk-downloading/regions.md#poly-line), downloading all of central London ready for that weekend exploration using the [Circle region](bulk-downloading/regions.md#circle) (roaming fees + maps gets expensive fast!), or tracking your belongings across a vast, shapeless space using the [Custom Polygon region](bulk-downloading/regions.md#custom-polygon), FMTC has your user's back - but not all of their storage space!
 
 </details>
 

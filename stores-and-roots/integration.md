@@ -1,8 +1,4 @@
----
-description: How to integrate FMTC with Flutter Map
----
-
-# 🗺️ flutter\_map Integration
+# flutter\_map Integration
 
 Stores also have the method `getTileProvider()`. This is the point of integration with flutter\_map, providing browse caching through a custom image provider, and can be used as so:
 
@@ -33,20 +29,23 @@ This enumerable contains 3 values, which are used to dictate which logic should 
 
 ### Obscuring Query Parameters
 
-{% hint style="success" %}
-A backport of this functionality to v6 is also available - see [this branch on GitHub](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching/tree/v6-backporting), and install it through GitHub: [#from-github.com](../get-started/installation.md#from-github.com "mention").
+{% hint style="info" %}
+Since v3, FMTC relies on URL equality to find tiles within a store during browsing. This method is therefore necessary in some cases where the URL contains query parameters.
 {% endhint %}
 
-If you've got a value (such as a token or a key) in the URL's query parameters (the key-value pairs list found after the '?') that you need to keep secret or that changes frequently, make use of `obscuredQueryParams`.
+If the URL's query parameters (the key-value pairs list found after the '?') contains a value that may change between fetches, such as an API key, use `obscuredQueryParams`.
 
-Pass it the list of query keys who's values need to be removed/omitted/obscured in storage. For example, 'api\_key' would remove the 'api\_key', and any other characters until the next key-value pair, or the end of the URL, as seen below:
+This method strips specified keys and values from the query parameters, and avoids storing them in the database.
+
+Pass it the list of query keys who's values need to be omitted from storage.\
+For example, 'api\_key' would remove the 'api\_key', and any other characters until the next key-value pair, or the end of the URL, as seen below:
 
 <pre><code>https://tile.myserver.com/{z}/{x}/{y}?api_key=001239876&#x26;mode=dark
 <strong>https://tile.myserver.com/{z}/{x}/{y}?&#x26;mode=dark
 </strong></code></pre>
 
-{% hint style="info" %}
-Since v3, FMTC relies on URL equality to find tiles within a store during browsing. This method is therefore necessary in cases where a token changes periodically.
+{% hint style="warning" %}
+Do not depend on this method to remove secret information from a URL.
 {% endhint %}
 
 ## Check If A Tile Is Cached

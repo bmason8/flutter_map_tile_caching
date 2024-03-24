@@ -1,4 +1,4 @@
-# 📤 External
+# Introduction
 
 FMTC allows stores (including all necessary tiles and metadata) to be [exported](exporting.md) to an 'archive'/a standalone file, then [imported](importing.md) on the same or a different device!
 

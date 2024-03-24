@@ -9,26 +9,38 @@
 * [Installation](get-started/installation.md)
 * [Example Application](get-started/example-application.md)
 
-## Usage
+## General
 
-* [1️⃣ Initialisation](usage/initialisation.md)
-* [📂 Using Roots & Stores](usage/roots-and-stores/README.md)
-  * [Store Management](usage/roots-and-stores/store-management.md)
-  * [Statistics](usage/roots-and-stores/statistics.md)
-  * [Metadata](usage/roots-and-stores/metadata.md)
-  * [Recovery](usage/roots-and-stores/recovery.md)
-* [🗺️ flutter\_map Integration](usage/integration.md)
-* [📲 Bulk Downloading](usage/bulk-downloading/README.md)
-  * [1️⃣ Create A Region](usage/bulk-downloading/regions.md)
-  * [2️⃣ Prepare For Downloading](usage/bulk-downloading/prepare.md)
-  * [3️⃣ Start Download](usage/bulk-downloading/foreground.md)
-  * [Control Downloads](usage/bulk-downloading/control-downloads.md)
-  * [Testing Tile Server](usage/bulk-downloading/testing-tile-server.md)
-* [📤 External](usage/external/README.md)
-  * [Exporting](usage/external/exporting.md)
-  * [Importing](usage/external/importing.md)
-* [Backends](usage/backends.md)
-* [Full API Reference](https://pub.dev/documentation/flutter\_map\_tile\_caching/latest/flutter\_map\_tile\_caching/flutter\_map\_tile\_caching-library.html)
+* [Initialisation](general/initialisation.md)
+* [Backends](general/backends.md)
+* [Error Handling](general/error-handling.md)
+
+## 📂 Stores & Roots
+
+* [Introduction](stores-and-roots/roots-and-stores.md)
+* [Stores](stores-and-roots/stores/README.md)
+  * [Management](stores-and-roots/stores/management.md)
+  * [Statistics](stores-and-roots/stores/statistics.md)
+  * [Metadata](stores-and-roots/stores/metadata.md)
+* [Roots](stores-and-roots/roots/README.md)
+  * [Statistics](stores-and-roots/roots/statistics.md)
+  * [Recovery](stores-and-roots/roots/recovery.md)
+* [flutter\_map Integration](stores-and-roots/integration.md)
+
+## 📲 Bulk Downloading
+
+* [Introduction](bulk-downloading/introduction.md)
+* [1️⃣ Create A Region](bulk-downloading/regions.md)
+* [2️⃣ Prepare For Downloading](bulk-downloading/prepare.md)
+* [3️⃣ Start Download](bulk-downloading/foreground.md)
+* [Control Downloads](bulk-downloading/control-downloads.md)
+* [Testing Tile Server](bulk-downloading/testing-tile-server.md)
+
+## 🗃️ External
+
+* [Introduction](external/introduction.md)
+* [Exporting](external/exporting.md)
+* [Importing](external/importing.md)
 
 ## Migration
 
@@ -37,4 +49,5 @@
 ***
 
 * [Credits](credits.md)
+* [Full API Reference](https://pub.dev/documentation/flutter\_map\_tile\_caching/latest/flutter\_map\_tile\_caching/flutter\_map\_tile\_caching-library.html)
 * [flutter\_map Docs](https://docs.fleaflet.dev/)

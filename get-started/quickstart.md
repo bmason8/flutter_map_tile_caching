@@ -22,7 +22,7 @@ flutter pub add flutter_map_tile_caching
 import 'package:flutter_map_tile_caching/flutter_map_tile_caching.dart';
 ```
 
-## 2. [Initialise](../usage/initialisation.md)
+## 2. [Initialise](../general/initialisation.md)
 
 Perform the startup procedure to allow usage of FMTC's APIs and allow FMTC to spin-up the underlying connections & systems.
 
@@ -42,7 +42,7 @@ Future&#x3C;void> main() async {
 }
 </code></pre>
 
-## 3. [Create a store](../usage/roots-and-stores/#without-automatic-creation)
+## 3. [Create a store](../stores-and-roots/roots-and-stores.md#without-automatic-creation)
 
 Create a container that is capable of storing tiles, and can be used to [browse cache](#user-content-fn-1)[^1] and bulk download.
 
@@ -55,7 +55,7 @@ Here, we'll create one called 'mapStore', directly after initialisation. Any num
     // ...
 </code></pre>
 
-## 4. [Connect to 'flutter\_map'](../usage/integration.md)
+## 4. [Connect to 'flutter\_map'](../stores-and-roots/integration.md)
 
 Add FMTC's specialised `TileProvider` to the `TileLayer`, to enable browse caching, and retrieval of tiles from the specified store.
 
@@ -89,7 +89,7 @@ This library and/or the creator(s) are not responsible for any violations you ma
 
 For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles).
 
-For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](../usage/bulk-downloading/testing-tile-server.md "mention").
+For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](../bulk-downloading/testing-tile-server.md "mention").
 {% endhint %}
 
 [^1]: This caching occurs automatically as the map is moved by the user, and new tiles load.

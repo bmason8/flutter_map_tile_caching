@@ -1,4 +1,4 @@
-# 📲 Bulk Downloading
+# Introduction
 
 FMTC also provides the ability to bulk download areas of maps in one-shot, known as 'regions'. There are multiple different types/shapes of regions available: [#types-of-region](regions.md#types-of-region "mention").
 
@@ -12,7 +12,7 @@ For example, OpenStreetMap's tile server forbids bulk downloading: [https://oper
 For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](testing-tile-server.md "mention").
 {% endhint %}
 
-Downloading is extremely efficient and fast, and uses multiple threads and isolates to achieve write speeds of hundreds of tiles per second (if the network/server speed allows). After downloading, no extra setup is needed to use them in a map (other than the usual [integration.md](../integration.md "mention")).
+Downloading is extremely efficient and fast, and uses multiple threads and isolates to achieve write speeds of hundreds of tiles per second (if the network/server speed allows). After downloading, no extra setup is needed to use them in a map (other than the usual [integration.md](../stores-and-roots/integration.md "mention")).
 
 It is also simple to understand and implement:
 

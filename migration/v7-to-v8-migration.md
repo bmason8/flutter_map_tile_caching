@@ -19,7 +19,7 @@ See the [Broken link](broken-reference "mention") instructions to add this modul
 * **Return type is now `ImportResult`**\
   This contains both the real store name (may be different to the filename) and whether the import was successful.
 * **Collision handlers are now called with an additional argument**\
-  The filename and real store name are now both passed to the collision handler. See [#collision-conflict-resolution](../usage/external/importing.md#collision-conflict-resolution "mention").
+  The filename and real store name are now both passed to the collision handler. See [#collision-conflict-resolution](../external/importing.md#collision-conflict-resolution "mention").
 
 ## Initialisation
 

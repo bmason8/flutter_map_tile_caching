@@ -9,7 +9,7 @@ To start using FMTC in your own app, please check out the [quickstart.md](quicks
 {% endhint %}
 
 {% hint style="success" %}
-The example application pairs perfectly with the testing tile server included in the FMTC project: [testing-tile-server.md](../usage/bulk-downloading/testing-tile-server.md "mention")!
+The example application pairs perfectly with the testing tile server included in the FMTC project: [testing-tile-server.md](../bulk-downloading/testing-tile-server.md "mention")!
 {% endhint %}
 
 ## Prebuilt Artifacts

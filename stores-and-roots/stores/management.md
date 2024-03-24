@@ -1,6 +1,6 @@
-# Store Management
+# Management
 
-`StoreManagement`, accessed via `FMTCStore.manage`, allows control over the store and its contents.
+`StoreManagement`, accessed via `FMTCStore().manage`, allows control over the store and its contents.
 
 {% embed url="https://pub.dev/documentation/flutter_map_tile_caching/latest/flutter_map_tile_caching/StoreManagement-class.html" %}
 

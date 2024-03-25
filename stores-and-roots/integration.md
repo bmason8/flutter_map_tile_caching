@@ -1,17 +1,32 @@
 # flutter\_map Integration
 
-Stores also have the method `getTileProvider()`. This is the point of integration with flutter\_map, providing browse caching through a custom image provider, and can be used as so:
+Stores also have the method `getTileProvider()`. This is the point of integration with flutter\_map, providing browse caching through a custom image provider. This `TileProvider` can then be passed to the `TileLayer.tileProvider` parameter.
 
 ```dart
 import 'package:flutter_map/flutter_map.dart';
 
-TileLayer(
-    // urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    // userAgentPackageName: 'com.example.app',
-    tileProvider: FMTC.instance('storeName').getTileProvider(),
-    // Other parameters as normal
-),
+class MapView extends StatefulWidget {
+    late final tileProvider = FMTC.instance('storeName').getTileProvider();
+    
+    Widget build(BuildContext context) {
+        return FlutterMap(
+            // options: MapOptions(),
+            children: [
+                TileLayer(
+                    // Other config parameters
+                    tileProvider: tileProvider,
+                ),
+            ],
+        );
+    }
+}
 ```
+
+{% hint style="warning" %}
+Avoid getting the `TileProvider` from within the build method, especially if the widget is rebuilt frequently.
+
+It can cause unnecessary errors and worsened performance.
+{% endhint %}
 
 ## Tile Provider Settings
 

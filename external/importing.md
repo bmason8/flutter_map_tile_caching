@@ -1,30 +1,41 @@
----
-description: fmtc_plus_sharing Module
----
-
 # Importing
 
-An exported store must be re-imported before it can be used again.
+The `import()` method copies the specified archive to a temporary location, then opens it and extracts the specified stores (or all stores if none are specified) & all necessary tiles, merging them into the in-use database. The specified archive must exist, must be valid, and should contain all the specified stores, if applicable.
+
+There is no support for directly overwriting the in-use database with the archived database, but this may be performed manually while FMTC is uninitialised.
 
 {% hint style="warning" %}
-Attempting to import a damaged/corrupted store may result in a fatal app crash, or major errors at least.
+There must be enough storage space available on the device to duplicate the entire archive, and to potentially grow the in-use database.
 
-See [#initialisation-safety](../general/initialisation.md#initialisation-safety "mention") for more information about how this may be handled in future.
+This is done to preserve the original archive, as this operation writes to the temporary archive. The temporary archive is deleted after the import has completed.
 {% endhint %}
 
-## With Platform GUI (`withGUI`)
+```dart
+final importResult =
+    await FMTCRoot.external('~/path/to/file.fmtc').import(['storeName']);
+```
 
-{% embed url="https://pub.dev/documentation/fmtc_plus_sharing/latest/fmtc_plus_sharing/FMTCImportSharingModule/withGUI.html" %}
+The returned value is complex.
 
-## With A Known `File` (`manual`)
+## Conflict Resolution Strategies
 
-{% embed url="https://pub.dev/documentation/fmtc_plus_sharing/latest/fmtc_plus_sharing/FMTCImportSharingModule/manual.html" %}
+If an importing store has the same name as an existing store, a conflict has occurred, because stores must have unique names. FMTC provides 4 resolution strategies:
 
-## Collision/Conflict Resolution
+* `skip`\
+  Skips importing the store
+* `replace`\
+  Deletes the existing store, replacing it entirely with the importing store
+* `rename`\
+  Appends the current date and time to the name of the importing store, to make it unique
+* `merge`\
+  Merges the two stores' tiles and metadata together
 
-In the event that a store with the same name already exists as the store that is trying to be imported, FMTC has only simple conflict resolution behaviour.
+In any case, a conflict between tiles will result in the newer (most recently modified) tile winning (it is assumed it is more up-to-date).
 
-When a collision is detected, the defined callback `collisionHandler` is called asynchronously, with the filename of the import file in addition to the real name of the contained store. It can return either:
+## List Stores
 
-* `true`: Override the _entire_ existing store and its contents
-* `false`: Skip/cancel the import
+If the user must be given a choice as to which stores to import (or it is helpful to know), and it is unknown what the stores within the archive are, the `listStores` getter will list the available store names without performing an import.
+
+{% hint style="warning" %}
+The same storage pitfalls as `import` exist. `listStores` must also duplicate the entire archive.
+{% endhint %}

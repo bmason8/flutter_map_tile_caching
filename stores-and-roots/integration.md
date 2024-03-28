@@ -63,6 +63,10 @@ For example, 'api\_key' would remove the 'api\_key', and any other characters un
 Do not depend on this method to remove secret information from a URL.
 {% endhint %}
 
+{% hint style="warning" %}
+Prefer sending any information (as discussed above) through the HTTP headers. This may improve performance and reliability, and can be considered good practise anyhow.
+{% endhint %}
+
 ## Check If A Tile Is Cached
 
 {% embed url="https://pub.dev/documentation/flutter_map_tile_caching/latest/flutter_map_tile_caching/FMTCTileProvider/checkTileCached.html" %}

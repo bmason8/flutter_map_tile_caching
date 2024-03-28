@@ -2,11 +2,11 @@
 
 Now that you have constructed a `DownloadableRegion`, you're almost ready to go.
 
+{% embed url="https://pub.dev/documentation/flutter_map_tile_caching/latest/flutter_map_tile_caching/DownloadManagement/startForeground.html" %}
+
 ## Customization Options
 
-Before you call `startForeground` to start the download, check out the customization parameters:
-
-{% embed url="https://pub.dev/documentation/flutter_map_tile_caching/latest/flutter_map_tile_caching/DownloadManagement/startForeground.html" %}
+Before you call `startForeground` (via `FMTCStore().download`) to start the download, check out the customization parameters:
 
 * `parallelThreads` (defaults to 5)\
   The number of simultaneous download threads to run
@@ -24,24 +24,21 @@ Before you call `startForeground` to start the download, check out the customiza
 ## Start Download
 
 {% hint style="warning" %}
-Before using FMTC, especially to bulk download, ensure you comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
+Before using FMTC, especially to bulk download or import/export, ensure you comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
 
 This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles).
+For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles). And Mapbox has restrictions on importing/exporting from outside of the user's own device.
 
 For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](testing-tile-server.md "mention").
 {% endhint %}
 
 ```dart
-final progressStream = FMTC.instance('storeName').download.startForeground(
+final progressStream = FMTCStore('storeName').download.startForeground(
     region: downloadableRegion,
-    // parallelThreads: 10,
-    // rateLimit: 200,
+    // other options...
 );
 ```
-
-{% embed url="https://pub.dev/documentation/flutter_map_tile_caching/latest/flutter_map_tile_caching/DownloadManagement/startForeground.html" %}
 
 {% hint style="info" %}
 Whilst not recommended, it is possible to start and control multiple downloads simultaneously, by using a unique `Object` as the `instanceId` argument. This 'key' can then later be used to control its respective download instance.

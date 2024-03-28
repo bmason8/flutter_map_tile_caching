@@ -8,8 +8,9 @@
 * [Quickstart](get-started/quickstart.md)
 * [Installation](get-started/installation.md)
 * [Example Application](get-started/example-application.md)
+* [v8 -> v9 Migration](get-started/v8-greater-than-v9-migration.md)
 
-## General
+## 🌐 General
 
 * [Initialisation](general/initialisation.md)
 * [Backends](general/backends.md)
@@ -41,10 +42,6 @@
 * [Introduction](external/introduction.md)
 * [Exporting](external/exporting.md)
 * [Importing](external/importing.md)
-
-## Migration
-
-* [v7 -> v8 Migration](migration/v7-to-v8-migration.md)
 
 ***
 

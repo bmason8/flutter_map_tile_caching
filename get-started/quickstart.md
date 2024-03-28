@@ -83,11 +83,11 @@ There's a lot more to discover, from store management to bulk downloading, and f
 {% endhint %}
 
 {% hint style="warning" %}
-Before using FMTC, especially to bulk download, ensure you comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
+Before using FMTC, especially to bulk download or import/export, ensure you comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
 
 This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles).
+For example, OpenStreetMap's tile server forbids bulk downloading: [https://operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles). And Mapbox has restrictions on importing/exporting from outside of the user's own device.
 
 For testing purposes, check out the testing tile server included in the FMTC project: [testing-tile-server.md](../bulk-downloading/testing-tile-server.md "mention").
 {% endhint %}

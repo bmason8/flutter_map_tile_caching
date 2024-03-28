@@ -1,4 +1,4 @@
-# 2⃣ Prepare For Downloading
+# 2️⃣ Prepare For Downloading
 
 [`BaseRegion`s](regions.md) must be converted to `DownloadableRegion`s before they can be used to download tiles.
 
@@ -23,7 +23,7 @@ The `TileLayer` passed to the `options` parameter must include both a `urlTempla
 
 ## Checking Number Of Tiles
 
-Before continuing to downloading the region, you can use `check()` to count the number of tiles it will attempt to download.
+Before continuing to downloading the region, you can use `check()` to count the number of tiles it will attempt to download. This is accessible through `FMTCStore().download`.
 
 The method takes the `DownloadableRegion` generated above, and will return an `int` number of tiles. For larger regions, this may take a few seconds.
 

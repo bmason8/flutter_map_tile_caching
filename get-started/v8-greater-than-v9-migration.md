@@ -14,7 +14,7 @@ Please consider donating: [#supporting-me](../#supporting-me "mention")! Any amo
 
 These migration instructions will not cover every scenario, because the number of breaking changes is so high. I've done my best to organise them into categories.
 
-## Universally Affecting
+## Universal
 
 {% hint style="warning" %}
 Stores and roots from previous versions will be incompatible with v9, and will not be migratable.
@@ -111,5 +111,63 @@ However, the members have all been renamed in the same form: `*Async` is now jus
 `DownloadableRegion` no longer contains the outline `points` of the `BaseRegion` it was formed from. It also no longer contains `parallelThreads`, `preventRedownload`, and `seaTileRemoval`: these are now configurable at download-time. `errorHandler` has been removed altogether.
 
 Additionally, `DownloadableRegion` now makes use of sealed typing by using the type argument to contain the type of `BaseRegion`, so `RegionType` has become redundant and been removed.
+
+</details>
+
+## Plugins
+
+<details>
+
+<summary>Background downloading plugin deprecated without replacement</summary>
+
+'package:fmtc\_plus\_background\_downloading' has been deprecated without replacment.
+
+It was becoming increasing unstable, and depended on unmaintained, unstable, and small packages. It also only supported Android, and did not properly work in many cases.
+
+Therefore, the plugin has been deprecated without replacement. The functionality may be re-introduced into the core at a later point.
+
+</details>
+
+<details>
+
+<summary>Sharing plugin deprecated, <code>external</code> replacement functionality introduced into core</summary>
+
+'package:fmtc\_plus\_sharing' has been deprecated, and the importing/exporting functionality introduced into the core, as [Broken link](broken-reference "mention").
+
+There is no replacement for the GUI/file picker functionality, to keep core dependencies minimized.
+
+</details>
+
+## Statistics
+
+<details>
+
+<summary><code>RootStats</code> &#x26; <code>StoreStats</code> members are no longer prefixed with 'root' &#x26; 'store'/'cache'</summary>
+
+These terms were redundant, and have been removed.
+
+For example, `rootSize` is now just `size`, and `cacheHits` is now just `hits`.
+
+</details>
+
+<details>
+
+<summary>Replaced <code>RootStats.watchChanges</code> with <code>watchStores</code> &#x26; <code>watchRecovery</code></summary>
+
+`watchStores` now watches for changes in statistics (which should change whenever tiles are changed), and changes in metadata in the specified stores. `watchRecovery` is now used to watch for changes to the recovery system.
+
+This was done to simplify the APIs and allow for the removal of `StoreParts` (which has been removed without deprecation).
+
+</details>
+
+## Miscellaneous
+
+<details>
+
+<summary>Removed <code>FMTCSettings</code></summary>
+
+`FMTCSettings` have been split apart. `databaseMaxSize` now has an equivalent in the configuration of the `FMTCObjectBoxBackend`, `databaseCompactCondition` has been removed without replacement, and `defaultTileProviderSettings` has been removed in favour of a singleton-ish `FMTCTileProviderSettings`.
+
+`FMTCTileProviderSettings` may now be set as a global instance (which works the same as the old `FMTCSettings` option) just by constructing it. Alternatively, one can be constructed without setting the global instance by setting `setInstance` `false` in the arguments.
 
 </details>

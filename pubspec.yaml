@@ -25,7 +25,7 @@ dependencies:
   bezier: ^1.2.0
   collection: ^1.16.0
   cross_file: ^0.3.3+2
-  file_picker: ^5.0.2
+  file_picker: ^8.0.0+1
   flutter:
     sdk: flutter
   flutter_background: ^1.1.0
